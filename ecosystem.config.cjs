@@ -5,7 +5,7 @@
  *   pm2 start ecosystem.config.cjs
  *   pm2 save && pm2 startup
  *
- * Se a porta 3016 já estiver ocupada: pm2 stop <nome-do-app-antigo>
+ * Se a porta 3017 já estiver ocupada: pm2 stop <nome-do-app-antigo>
  * ou altere PORT no env abaixo e no nginx.
  */
 module.exports = {
@@ -14,7 +14,7 @@ module.exports = {
       name: "wca-landing",
       cwd: __dirname,
       script: "node_modules/serve/build/main.js",
-      args: ["-l", "tcp://0.0.0.0:3016", "--no-clipboard", "."],
+      args: ["-l", "tcp://0.0.0.0:3017", "--no-clipboard", "."],
       instances: 1,
       exec_mode: "fork",
       autorestart: true,
@@ -22,7 +22,7 @@ module.exports = {
       max_memory_restart: "200M",
       env: {
         NODE_ENV: "production",
-        PORT: "3016",
+        PORT: "3017",
       },
     },
   ],
