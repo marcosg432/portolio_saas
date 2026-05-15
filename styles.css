@@ -812,7 +812,6 @@ h2 {
 
 .vision-section::before,
 .system-section::before,
-.ecosystem-section::before,
 .brand-section::before,
 .future-section::before {
   position: absolute;
@@ -895,34 +894,78 @@ h2 {
 
 .ecosystem-section {
   position: relative;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  overflow-x: clip;
+  background: #02040a;
   isolation: isolate;
-  grid-template-columns: minmax(0, 1.02fr) minmax(280px, 0.88fr);
-  grid-template-rows: minmax(0, 1fr);
-  gap: clamp(24px, 4.5vw, 72px);
 }
 
 .ecosystem-section__ambient {
   position: absolute;
   inset: 0;
-  grid-column: 1 / -1;
-  grid-row: 1 / -1;
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 85% 55% at 78% 42%, rgba(15, 33, 69, 0.55), transparent 58%),
-    radial-gradient(ellipse 60% 45% at 12% 58%, rgba(88, 66, 249, 0.08), transparent 52%),
-    linear-gradient(165deg, rgba(0, 0, 0, 0.35) 0%, transparent 42%, rgba(2, 5, 11, 0.5) 100%);
-  opacity: 0.95;
+    radial-gradient(ellipse 125% 90% at 78% 36%, rgba(15, 33, 69, 0.72), transparent 58%),
+    radial-gradient(ellipse 85% 75% at 6% 52%, rgba(37, 99, 235, 0.1), transparent 55%),
+    radial-gradient(ellipse 100% 55% at 50% -5%, rgba(15, 33, 69, 0.35), transparent 50%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, transparent 28%, transparent 72%, rgba(0, 0, 0, 0.22) 100%),
+    #02040a;
+}
+
+.ecosystem-section__ambient::before {
+  position: absolute;
+  inset: -18% -12% -22% -12%;
+  z-index: 0;
+  content: "";
+  background:
+    radial-gradient(ellipse 70% 55% at 72% 42%, rgba(56, 189, 248, 0.1), transparent 68%),
+    radial-gradient(ellipse 50% 45% at 24% 58%, rgba(88, 66, 249, 0.06), transparent 62%);
+  filter: blur(56px);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.ecosystem-section__ambient::after {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  content: "";
+  opacity: 0.06;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 120% 85% at 50% 45%, black 25%, transparent 72%);
+  pointer-events: none;
+}
+
+.ecosystem-section__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) minmax(300px, 0.94fr);
+  gap: clamp(40px, 6vw, 104px);
+  align-items: center;
+  max-width: min(1360px, 100%);
+  margin-inline: auto;
+  padding-inline: max(clamp(16px, 4.2vw, 76px), env(safe-area-inset-left))
+    max(clamp(16px, 4.2vw, 76px), env(safe-area-inset-right));
+  padding-block: clamp(80px, 12vh, 140px);
+  background: transparent;
 }
 
 .ecosystem-panel {
   position: relative;
   z-index: 2;
-  grid-column: 1;
-  max-width: 640px;
+  max-width: min(42rem, 100%);
   width: 100%;
   min-width: 0;
-  padding-top: clamp(8px, 1.5vw, 24px);
+  padding-top: 0;
 }
 
 .ecosystem-panel .eyebrow {
@@ -970,7 +1013,7 @@ h2 {
 .ecosystem-benefits {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: clamp(12px, 1.4vw, 16px);
   margin-top: clamp(28px, 4vw, 40px);
 }
 
@@ -1026,40 +1069,41 @@ h2 {
 .ecosystem-visual {
   position: relative;
   z-index: 1;
-  grid-column: 2;
-  min-height: min(720px, 78vh);
+  min-height: min(760px, 82vh);
+  margin: clamp(-24px, -2vw, -12px) 0;
   overflow: visible;
   transform-style: preserve-3d;
 }
 
 .ecosystem-visual__bloom {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 48%;
+  left: 54%;
   z-index: 0;
-  width: min(520px, 90%);
-  height: min(620px, 88%);
-  transform: translate(-50%, -50%);
+  width: min(700px, 155%);
+  height: min(780px, 145%);
+  transform: translate(-50%, -50%) scale(1.12);
   border-radius: 50%;
   background:
-    radial-gradient(circle at 40% 35%, rgba(95, 170, 255, 0.22), transparent 55%),
-    radial-gradient(circle at 62% 58%, rgba(88, 66, 249, 0.14), transparent 52%);
-  filter: blur(38px);
-  opacity: 0.85;
+    radial-gradient(circle at 38% 32%, rgba(125, 200, 255, 0.28), transparent 52%),
+    radial-gradient(circle at 58% 62%, rgba(88, 66, 249, 0.18), transparent 55%),
+    radial-gradient(circle at 50% 50%, rgba(15, 33, 69, 0.35), transparent 62%);
+  filter: blur(52px);
+  opacity: 0.92;
   pointer-events: none;
 }
 
 .ecosystem-visual__grid {
   position: absolute;
-  inset: 8% 4%;
+  inset: -12% -28% -18% -8%;
   z-index: 0;
-  border-radius: 28px;
-  opacity: 0.14;
+  border-radius: 40px;
+  opacity: 0.11;
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
   background-size: 48px 48px;
-  mask-image: radial-gradient(ellipse 70% 65% at 50% 48%, black 20%, transparent 72%);
+  mask-image: radial-gradient(ellipse 88% 82% at 54% 50%, black 18%, transparent 76%);
   pointer-events: none;
 }
 
@@ -1068,7 +1112,7 @@ h2 {
   top: 50%;
   left: 50%;
   z-index: 2;
-  width: min(340px, 30vw);
+  width: min(360px, 32vw);
   min-width: 260px;
   aspect-ratio: 0.515;
   transform: translate(-50%, -50%);
@@ -1087,8 +1131,9 @@ h2 {
   box-shadow:
     inset 0 0 0 7px #05070c,
     inset 0 0 0 8px rgba(255, 255, 255, 0.1),
-    0 40px 100px rgba(0, 8, 28, 0.55),
-    0 0 60px rgba(15, 33, 69, 0.35);
+    0 48px 120px rgba(0, 8, 28, 0.58),
+    0 0 72px rgba(15, 33, 69, 0.42),
+    0 26px 52px rgba(0, 0, 0, 0.32);
 }
 
 .global-globe {
@@ -1963,13 +2008,21 @@ h2 {
 
   .cinema-section,
   .system-section,
-  .ecosystem-section,
   .brand-section {
     grid-template-columns: 1fr;
     min-height: 0;
     align-items: start;
     padding-block: var(--section-y-relaxed);
     gap: 22px;
+  }
+
+  .ecosystem-section__inner {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    align-items: start;
+    padding-block: var(--section-y-relaxed);
+    padding-inline: max(var(--pad-inline-tablet), env(safe-area-inset-left))
+      max(var(--pad-inline-tablet), env(safe-area-inset-right));
   }
 
   .editorial-copy h2 {
@@ -2303,10 +2356,16 @@ h2 {
 
   .cinema-section,
   .system-section,
-  .ecosystem-section,
   .brand-section {
     padding-block: var(--section-y-tight);
     gap: 18px;
+  }
+
+  .ecosystem-section__inner {
+    padding-block: var(--section-y-tight);
+    gap: 18px;
+    padding-inline: max(var(--pad-inline-mobile), env(safe-area-inset-left))
+      max(var(--pad-inline-mobile), env(safe-area-inset-right));
   }
 
   .section-index {
