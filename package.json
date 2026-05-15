@@ -1,0 +1,19 @@
+{
+  "name": "page-wca",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing WCA — estático servido na porta 3016 (PM2)",
+  "scripts": {
+    "start": "serve -l tcp://0.0.0.0:3016 --no-clipboard .",
+    "pm2:start": "pm2 start ecosystem.config.cjs",
+    "pm2:stop": "pm2 stop wca-landing",
+    "pm2:restart": "pm2 restart wca-landing",
+    "pm2:delete": "pm2 delete wca-landing"
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

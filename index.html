@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="WCA - a nova geração das lojas de camisas de futebol."
+    />
+    <title>WCA | A nova geração das lojas de camisas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="is-loading">
+    <div class="preloader" aria-label="Carregando experiência WCA" aria-live="polite">
+      <div class="preloader__glow" aria-hidden="true"></div>
+      <div class="preloader__orbit" aria-hidden="true">
+        <span class="preloader__orbit-track"></span>
+        <span class="preloader__orbit-arc"></span>
+      </div>
+      <div class="preloader__mark" aria-hidden="true">
+        <img src="./assets/wca-loading-logo.png" alt="" />
+      </div>
+    </div>
+
+    <div class="grain" aria-hidden="true"></div>
+    <div class="aurora" aria-hidden="true">
+      <span class="aurora__orb aurora__orb--one"></span>
+      <span class="aurora__orb aurora__orb--two"></span>
+      <span class="aurora__orb aurora__orb--three"></span>
+    </div>
+    <canvas id="particle-field" aria-hidden="true"></canvas>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="WCA início">
+        <span class="brand__mark">WCA</span>
+        <span>WCA</span>
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#vision">Visão</a>
+        <a href="#system">Sistema</a>
+        <a href="#future">Futuro</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="header-cta" href="#launch">Acompanhar</a>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell" data-scene>
+        <div class="hero__atmosphere" aria-hidden="true"></div>
+        <div class="hero__copy reveal">
+          <p class="eyebrow">WCA / World Code Akyra</p>
+          <h1>
+            <span>A nova geração</span>
+            <span>das lojas de camisas.</span>
+          </h1>
+          <p class="hero__subtitle">
+            Uma plataforma silenciosamente poderosa para transformar operações
+            amadoras em marcas de futebol com presença, controle e desejo.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary magnetic" href="#launch">
+              Acompanhar lançamento
+            </a>
+            <span>Construído para quem quer parecer grande antes de ser óbvio.</span>
+          </div>
+        </div>
+
+        <div class="hero-stage" data-depth="0.028" aria-hidden="true">
+          <div class="stage-orbit stage-orbit--one"></div>
+          <div class="stage-orbit stage-orbit--two"></div>
+          <div class="phone-scene">
+            <div class="phone-glow"></div>
+            <div class="premium-phone">
+              <div class="phone-frame">
+                <div class="phone-speaker"></div>
+                <div class="phone-screen">
+                  <img src="./assets/copa-store-interface-source.png" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="phone-reflection"></div>
+          </div>
+        </div>
+
+        <div class="scroll-indicator" aria-hidden="true">
+          <span></span>
+        </div>
+      </section>
+
+      <section id="vision" class="cinema-section vision-section">
+        <div class="section-index reveal">01</div>
+        <div class="editorial-copy reveal">
+          <p class="eyebrow">O mercado ainda vende no improviso</p>
+          <h2>O futebol merece uma operação com a mesma força da paixão que ele carrega.</h2>
+          <p>
+            A WCA nasce para tirar lojas independentes do ruído: estoque disperso,
+            pedidos quebrados, marca frágil e uma experiência que ainda não parece
+            profissional.
+          </p>
+        </div>
+        <div class="void-map reveal" data-depth="0.018" aria-hidden="true">
+          <div class="global-globe">
+            <div id="global-globe-webgl"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="system" class="cinema-section system-section">
+        <div class="system-visual reveal" data-depth="0.022" aria-hidden="true">
+          <div class="phone-scene phone-scene--system">
+            <div class="phone-glow"></div>
+            <div class="premium-phone">
+              <div class="phone-frame">
+                <div class="phone-speaker"></div>
+                <div class="phone-screen">
+                  <img src="./assets/copa-store-phone.png" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="phone-reflection"></div>
+          </div>
+        </div>
+        <div class="editorial-copy reveal">
+          <p class="eyebrow">Uma camada operacional para marcas de futebol</p>
+          <h2>Catálogo, pedido, estoque e presença conectados em um único ritmo.</h2>
+          <p>
+            Menos dashboard. Mais estrutura invisível. A tecnologia desaparece
+            para que a loja pareça inevitavelmente profissional.
+          </p>
+        </div>
+      </section>
+
+      <section
+        id="ecosystem"
+        class="cinema-section ecosystem-section"
+        aria-labelledby="ecosystem-heading"
+      >
+        <div class="ecosystem-section__ambient" aria-hidden="true"></div>
+        <div class="ecosystem-panel ecosystem-panel--copy reveal">
+          <p class="eyebrow">Estrutura operacional</p>
+          <h2 id="ecosystem-heading" class="ecosystem-title">
+            <span class="ecosystem-title__line">Como <span class="ecosystem-title__accent">a WCA</span> ajuda</span>
+            <span class="ecosystem-title__line">sua loja a vender</span>
+            <span class="ecosystem-title__line">com mais <span class="ecosystem-title__accent">presença.</span></span>
+          </h2>
+          <p class="ecosystem-lead">
+            A WCA conecta catálogo, pedidos, estoque e percepção de marca em uma única estrutura.
+            Menos improviso. Mais presença. Mais profissionalismo.
+          </p>
+          <div class="ecosystem-benefits">
+            <article class="ecosystem-card">
+              <h3 class="ecosystem-card__title">Estrutura pronta</h3>
+              <p class="ecosystem-card__desc">Catálogo, pedidos e operação conectados.</p>
+            </article>
+            <article class="ecosystem-card">
+              <h3 class="ecosystem-card__title">Mais percepção</h3>
+              <p class="ecosystem-card__desc">Sua loja com aparência premium e profissional.</p>
+            </article>
+            <article class="ecosystem-card">
+              <h3 class="ecosystem-card__title">Gestão inteligente</h3>
+              <p class="ecosystem-card__desc">Dashboard, relatórios e controle da operação.</p>
+            </article>
+            <article class="ecosystem-card">
+              <h3 class="ecosystem-card__title">Escalabilidade</h3>
+              <p class="ecosystem-card__desc">Mais liberdade para expandir sua marca.</p>
+            </article>
+          </div>
+          <a class="button button--primary magnetic" href="#launch">Entrar no ecossistema WCA</a>
+        </div>
+        <div class="ecosystem-visual reveal" data-depth="0.018" aria-hidden="true">
+          <div class="ecosystem-visual__bloom"></div>
+          <div class="ecosystem-visual__grid" aria-hidden="true"></div>
+          <div class="ecosystem-phone">
+            <div class="premium-phone ecosystem-phone__tilt">
+              <div class="phone-frame">
+                <div class="phone-speaker"></div>
+                <div class="phone-screen">
+                  <img src="./assets/copa-store-phone.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="manifest-section">
+        <p class="manifest-line reveal">
+          A loja deixa de parecer um negócio improvisado.
+          <span>Começa a parecer uma marca que o mercado ainda não descobriu.</span>
+        </p>
+      </section>
+
+      <section class="cinema-section brand-section">
+        <div class="editorial-copy reveal">
+          <p class="eyebrow">Percepção de marca</p>
+          <h2>A experiência precisa vender confiança antes da primeira camisa.</h2>
+        </div>
+        <div class="brand-theater reveal" data-depth="0.016" aria-hidden="true">
+          <div class="theater-light"></div>
+          <div class="brand-theater__stage">
+            <div class="brand-theater__mark">
+              <div class="brand-wordmark" aria-hidden="true">
+                <span class="brand-wordmark__text">WCA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="future" class="future-section">
+        <canvas class="launch-splash-cursor" aria-hidden="true"></canvas>
+        <div class="future-copy reveal">
+          <p class="eyebrow">Futuro do ecommerce esportivo</p>
+          <h2>As próximas grandes marcas de futebol serão construídas com infraestrutura.</h2>
+          <p>
+            A WCA está desenhando a base para uma nova classe de lojistas:
+            organizados, desejáveis e prontos para escalar.
+          </p>
+        </div>
+      </section>
+
+      <section id="launch" class="final-section">
+        <canvas class="launch-splash-cursor" aria-hidden="true"></canvas>
+        <div class="final-card reveal">
+          <p class="eyebrow">WCA está chegando</p>
+          <h2>Entre antes da categoria mudar de aparência.</h2>
+          <a class="button button--primary magnetic" href="mailto:lancamento@wca.com">
+            Acompanhar lançamento
+          </a>
+        </div>
+      </section>
+
+      <section id="faq" class="faq-section" aria-labelledby="faq-heading">
+        <div class="faq-section__ambient" aria-hidden="true"></div>
+        <div class="faq-section__grid reveal">
+          <header class="faq-section__intro">
+            <p class="faq-section__kicker">F.A.Q</p>
+            <h2 id="faq-heading" class="faq-section__title">
+              <span class="faq-section__title-line">Perguntas</span>
+              <span class="faq-section__title-line">Frequentes</span>
+            </h2>
+            <p class="faq-section__lead">
+              Tudo que você precisa saber<br />
+              sobre a estrutura da WCA.
+            </p>
+            <p class="faq-section__contact">
+              <span class="faq-section__contact-muted">Ainda ficou com dúvidas?</span>
+              <a class="faq-section__contact-link" href="mailto:lancamento@wca.com">Entre em contato com a WCA.</a>
+            </p>
+          </header>
+          <div class="faq-accordion" data-faq-accordion>
+            <div class="faq-item">
+              <button
+                type="button"
+                class="faq-item__trigger"
+                id="faq-trigger-1"
+                aria-expanded="false"
+                aria-controls="faq-panel-1"
+              >
+                <span class="faq-item__question">Qual o diferencial da WCA?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </button>
+              <div
+                id="faq-panel-1"
+                class="faq-item__panel"
+                role="region"
+                aria-labelledby="faq-trigger-1"
+                aria-hidden="true"
+              >
+                <div class="faq-item__inner">
+                  <p class="faq-item__answer">
+                    A WCA é a única empresa que entrega uma verdadeira loja online completa, unindo
+                    design premium, identidade visual<br />
+                    e estrutura profissional para aumentar a percepção de valor da sua marca.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button
+                type="button"
+                class="faq-item__trigger"
+                id="faq-trigger-2"
+                aria-expanded="false"
+                aria-controls="faq-panel-2"
+              >
+                <span class="faq-item__question">Preciso instalar algum aplicativo?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </button>
+              <div
+                id="faq-panel-2"
+                class="faq-item__panel"
+                role="region"
+                aria-labelledby="faq-trigger-2"
+                aria-hidden="true"
+              >
+                <div class="faq-item__inner">
+                  <p class="faq-item__answer">
+                    Não. Toda a estrutura funciona diretamente no navegador, sem necessidade de
+                    instalação.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button
+                type="button"
+                class="faq-item__trigger"
+                id="faq-trigger-3"
+                aria-expanded="false"
+                aria-controls="faq-panel-3"
+              >
+                <span class="faq-item__question">Consigo personalizar minha loja?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </button>
+              <div
+                id="faq-panel-3"
+                class="faq-item__panel"
+                role="region"
+                aria-labelledby="faq-trigger-3"
+                aria-hidden="true"
+              >
+                <div class="faq-item__inner">
+                  <p class="faq-item__answer">
+                    Sim. Você pode personalizar identidade visual, banners, organização da loja e
+                    muito mais.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button
+                type="button"
+                class="faq-item__trigger"
+                id="faq-trigger-4"
+                aria-expanded="false"
+                aria-controls="faq-panel-4"
+              >
+                <span class="faq-item__question">A WCA funciona pelo celular?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </button>
+              <div
+                id="faq-panel-4"
+                class="faq-item__panel"
+                role="region"
+                aria-labelledby="faq-trigger-4"
+                aria-hidden="true"
+              >
+                <div class="faq-item__inner">
+                  <p class="faq-item__answer">
+                    Sim. Sua operação pode ser acessada e gerenciada também pelo celular.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button
+                type="button"
+                class="faq-item__trigger"
+                id="faq-trigger-5"
+                aria-expanded="false"
+                aria-controls="faq-panel-5"
+              >
+                <span class="faq-item__question">Posso cancelar quando quiser?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </button>
+              <div
+                id="faq-panel-5"
+                class="faq-item__panel"
+                role="region"
+                aria-labelledby="faq-trigger-5"
+                aria-hidden="true"
+              >
+                <div class="faq-item__inner">
+                  <p class="faq-item__answer">
+                    Sim. Você tem total liberdade para cancelar quando quiser, sem burocracia e sem
+                    complicações.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button
+                type="button"
+                class="faq-item__trigger"
+                id="faq-trigger-6"
+                aria-expanded="false"
+                aria-controls="faq-panel-6"
+              >
+                <span class="faq-item__question">Como funciona o pagamento?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </button>
+              <div
+                id="faq-panel-6"
+                class="faq-item__panel"
+                role="region"
+                aria-labelledby="faq-trigger-6"
+                aria-hidden="true"
+              >
+                <div class="faq-item__inner">
+                  <p class="faq-item__answer">
+                    A contratação é simples, rápida e segura: você pode pagar com cartão de crédito ou
+                    Pix, e sua loja começa a operar sem burocracia.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button
+                type="button"
+                class="faq-item__trigger"
+                id="faq-trigger-7"
+                aria-expanded="false"
+                aria-controls="faq-panel-7"
+              >
+                <span class="faq-item__question">A plataforma serve apenas para lojas grandes?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </button>
+              <div
+                id="faq-panel-7"
+                class="faq-item__panel"
+                role="region"
+                aria-labelledby="faq-trigger-7"
+                aria-hidden="true"
+              >
+                <div class="faq-item__inner">
+                  <p class="faq-item__answer">
+                    Não. A WCA foi criada tanto para quem está começando quanto para marcas que já
+                    possuem uma operação estruturada.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button
+                type="button"
+                class="faq-item__trigger"
+                id="faq-trigger-8"
+                aria-expanded="false"
+                aria-controls="faq-panel-8"
+              >
+                <span class="faq-item__question">Quanto tempo leva para criar minha loja?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </button>
+              <div
+                id="faq-panel-8"
+                class="faq-item__panel"
+                role="region"
+                aria-labelledby="faq-trigger-8"
+                aria-hidden="true"
+              >
+                <div class="faq-item__inner">
+                  <p class="faq-item__answer">
+                    Em poucos minutos sua estrutura já pode estar pronta para operar.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button
+                type="button"
+                class="faq-item__trigger"
+                id="faq-trigger-9"
+                aria-expanded="false"
+                aria-controls="faq-panel-9"
+              >
+                <span class="faq-item__question">A WCA oferece suporte?</span>
+                <span class="faq-item__icon" aria-hidden="true"></span>
+              </button>
+              <div
+                id="faq-panel-9"
+                class="faq-item__panel"
+                role="region"
+                aria-labelledby="faq-trigger-9"
+                aria-hidden="true"
+              >
+                <div class="faq-item__inner">
+                  <p class="faq-item__answer">
+                    Sim. A WCA oferece suporte para ajudar sua loja durante toda a operação, garantindo
+                    uma experiência mais simples, organizada e profissional.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/globe.gl@2.32.1/dist/globe.gl.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
